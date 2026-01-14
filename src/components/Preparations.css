@@ -147,4 +147,8 @@
     .prep-grid {
         grid-template-columns: 1fr;
     }
+
+    .preparations-section {
+        padding: 4rem 1rem;
+    }
 }

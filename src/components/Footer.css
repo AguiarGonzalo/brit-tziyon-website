@@ -11,6 +11,12 @@
     padding: 0 2rem;
 }
 
+@media (max-width: 600px) {
+    .footer-container {
+        padding: 0 1rem;
+    }
+}
+
 .footer-content {
     display: flex;
     justify-content: space-between;
