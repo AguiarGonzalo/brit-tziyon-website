@@ -1,8 +1,37 @@
+import React from 'react'
 import './Contact.css'
 import './Contact.css'
 import { FaWhatsapp, FaInstagram } from 'react-icons/fa'
 
 const Contact = () => {
+    const [formData, setFormData] = React.useState({
+        name: '',
+        phone: '',
+        date: '',
+        time: '',
+        message: ''
+    });
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({
+            ...prev,
+            [name]: value
+        }));
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        const { name, phone, date, time, message } = formData;
+
+        const whatsappMessage = `שלום, אשמח לפרטים לגבי ברית מילה.%0A%0A*שם:* ${name}%0A*טלפון:* ${phone}%0A*תאריך משוער:* ${date}%0A*שעה מועדפת:* ${time || 'לא צוין'}%0A*הודעה:* ${message || 'ללא הודעה נוספת'}`;
+
+        const whatsappUrl = `https://wa.me/972505323909?text=${whatsappMessage}`;
+
+        window.open(whatsappUrl, '_blank');
+    };
+
     return (
         <section className="contact-section">
             <div className="container">
@@ -60,28 +89,63 @@ const Contact = () => {
                         </div>
                     </div>
 
-                    <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
+                    <form className="contact-form" onSubmit={handleSubmit}>
                         <h3>השאירו פרטים ונחזור אליכם</h3>
                         <div className="form-group">
-                            <input type="text" placeholder="שם מלא" required />
+                            <input
+                                type="text"
+                                name="name"
+                                placeholder="שם מלא"
+                                required
+                                value={formData.name}
+                                onChange={handleChange}
+                            />
                         </div>
                         <div className="form-group">
-                            <input type="tel" placeholder="טלפון" required />
+                            <input
+                                type="tel"
+                                name="phone"
+                                placeholder="טלפון"
+                                required
+                                value={formData.phone}
+                                onChange={handleChange}
+                            />
                         </div>
                         <div className="form-row">
                             <div className="form-group">
                                 <label className="input-label">תאריך משוער</label>
-                                <input type="date" required className="date-input" />
+                                <input
+                                    type="date"
+                                    name="date"
+                                    required
+                                    className="date-input"
+                                    value={formData.date}
+                                    onChange={handleChange}
+                                />
                             </div>
                             <div className="form-group">
                                 <label className="input-label">שעה מועדפת</label>
-                                <input type="time" className="time-input" />
+                                <input
+                                    type="time"
+                                    name="time"
+                                    className="time-input"
+                                    value={formData.time}
+                                    onChange={handleChange}
+                                />
                             </div>
                         </div>
                         <div className="form-group">
-                            <textarea placeholder="הודעה / הערות נוספות" rows="4"></textarea>
+                            <textarea
+                                name="message"
+                                placeholder="הודעה / הערות נוספות"
+                                rows="4"
+                                value={formData.message}
+                                onChange={handleChange}
+                            ></textarea>
                         </div>
-                        <button type="submit" className="submit-btn">שליחה</button>
+                        <button type="submit" className="submit-btn" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
+                            <FaWhatsapp /> שליחה ל-WhatsApp
+                        </button>
                     </form>
                 </div>
             </div>
