@@ -1,0 +1,150 @@
+.preparations-section {
+    padding: var(--section-padding);
+    background-color: var(--background-alt);
+    /* White */
+    position: relative;
+    z-index: 5;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+/* Defer to global h2 */
+
+.section-header .subtitle {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+}
+
+.prep-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    max-width: var(--container-width);
+    margin: 0 auto;
+}
+
+.prep-card {
+    background: var(--background-color);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: var(--shadow-sm);
+    border-top: 4px solid var(--primary-color);
+}
+
+.prep-card .card-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 1rem;
+}
+
+.prep-card h3 {
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+.share-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: transparent;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 0.5rem 1.2rem;
+    border-radius: 50px;
+    /* Standardized pill shape */
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.share-btn:hover {
+    background: var(--primary-color);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* Instructions Steps */
+.instruction-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.step-number {
+    background: var(--primary-color);
+    color: #fff;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.instruction-step p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+.alert-box {
+    background-color: #ffebee;
+    color: #c62828;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 2rem;
+    border-right: 4px solid #c62828;
+}
+
+/* Checklist Items */
+.items-list {
+    list-style: none;
+    padding: 0;
+}
+
+.items-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 0.5rem;
+    /* Reduced spacing */
+    padding: 0.6rem 0.8rem;
+    /* Slightly more compact padding */
+    background-color: #f9f9f9;
+    border-radius: 6px;
+    transition: background-color 0.2s;
+}
+
+.items-list li:hover {
+    background-color: #f0f0f0;
+}
+
+.items-list input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--primary-color);
+    cursor: pointer;
+}
+
+.items-list label {
+    cursor: pointer;
+    flex: 1;
+    font-size: 1.05rem;
+}
+
+@media (max-width: 768px) {
+    .prep-grid {
+        grid-template-columns: 1fr;
+    }
+}

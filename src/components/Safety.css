@@ -1,0 +1,297 @@
+/* SAFETY SECTION - Distinct & Medical */
+.safety-section {
+    padding: var(--section-padding);
+    /* Light Blue-Grey Background for Distinction */
+    background: #F1F5F9;
+    color: var(--secondary-color);
+    position: relative;
+    overflow: hidden;
+    /* Top/Bottom Border for clear separation */
+    border-top: 1px solid rgba(0, 0, 0, 0.03);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+/* Subtle texture/gradient for depth */
+.safety-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -20%;
+    width: 80%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, transparent 70%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.safety-content {
+    display: flex;
+    align-items: center;
+    gap: 6rem;
+    /* Increase gap */
+    position: relative;
+    z-index: 1;
+}
+
+/* TEXT COLUMN (Right) */
+.safety-text-col {
+    flex: 1;
+    text-align: right;
+    /* Move text away from the right edge */
+    padding-right: 2rem;
+}
+
+.badge-container {
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: right;
+}
+
+.premium-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(26, 47, 75, 0.05);
+    /* Navy tint */
+    border: 1px solid rgba(26, 47, 75, 0.1);
+    padding: 0.5rem 1.2rem;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    color: var(--secondary-color);
+    /* Navy text */
+    font-weight: 600;
+}
+
+/* Defer to global h2 */
+
+.gold-text {
+    color: var(--primary-color);
+    /* Copper/Gold */
+    position: relative;
+    display: inline-block;
+    text-shadow: none;
+}
+
+.gold-text::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    right: 0;
+    width: 100%;
+    height: 8px;
+    background: var(--primary-color);
+    opacity: 0.15;
+    /* Subtler underline */
+    z-index: -1;
+    transform: skewX(-15deg);
+}
+
+.lead-text {
+    font-size: 1.25rem;
+    color: var(--text-body);
+    /* Dark Gray for readability */
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+    margin-left: auto;
+}
+
+/* Feature List */
+.safety-feature-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 1.2rem;
+}
+
+.safety-feature-list li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: #fff;
+    padding: 1.2rem;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    /* Very subtle border */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.safety-feature-list li:hover {
+    background: #fff;
+    transform: translateX(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+    border-color: rgba(200, 121, 65, 0.2);
+    /* Gold border on hover */
+}
+
+.icon-wrapper {
+    color: var(--primary-color);
+    /* Copper Icon */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(200, 121, 65, 0.1);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.feature-text {
+    font-size: 1.15rem;
+    color: var(--secondary-color);
+    font-weight: 500;
+}
+
+
+/* VISUAL COLUMN (Left) - Card */
+.safety-visual-col {
+    flex: 0.8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.sterility-card-3d {
+    background: #fff;
+    /* Clean white card */
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 24px;
+    padding: 3rem 2rem;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 20px 40px -5px rgba(26, 47, 75, 0.1);
+    /* Navy shadow */
+    transform: perspective(1000px) rotateY(-5deg);
+    transition: transform 0.5s ease;
+}
+
+.sterility-card-3d:hover {
+    transform: perspective(1000px) rotateY(0deg) translateY(-10px);
+    box-shadow: 0 25px 50px -12px rgba(200, 121, 65, 0.15);
+    /* Copper shadow hint */
+}
+
+.card-content h3 {
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.card-content p {
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.shield-icon-large {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.shield-icon-large svg {
+    width: 80px;
+    height: 80px;
+    filter: drop-shadow(0 4px 6px rgba(200, 121, 65, 0.2));
+}
+
+.card-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--secondary-color);
+    /* Navy Badge */
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    border-radius: 12px;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(26, 47, 75, 0.3);
+}
+
+/* Floating Elements */
+.card-floating-icon {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.top-right {
+    top: -20px;
+    right: -20px;
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* Glow */
+.glow-effect {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 250px;
+    height: 250px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.08;
+    /* Very subtle warm glow behind card */
+    z-index: -1;
+    pointer-events: none;
+}
+
+@media (max-width: 1024px) {
+    .safety-content {
+        flex-direction: column;
+        gap: 4rem;
+        text-align: center;
+    }
+
+    .safety-text-col {
+        text-align: center;
+    }
+
+    .lead-text {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .safety-feature-list li {
+        justify-content: center;
+        transform: none !important;
+    }
+
+    .sterility-card-3d {
+        transform: none;
+        max-width: 100%;
+    }
+
+    .badge-container {
+        justify-content: center;
+    }
+}

@@ -1,0 +1,55 @@
+.footer {
+    background-color: var(--secondary-color);
+    /* Dark Brown */
+    color: #fff;
+    padding: 3rem 0 1rem;
+}
+
+.footer-container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-brand h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.footer-contact {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    /* Space between Phone and Instagram */
+}
+
+.footer-contact a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    transition: color 0.3s;
+    display: flex;
+    align-items: center;
+}
+
+.footer-bottom {
+    text-align: center;
+    opacity: 0.6;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 600px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
+}

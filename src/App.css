@@ -1,0 +1,21 @@
+/* App Layout Reset */
+.app-container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  width: 100%;
+}
+
+/* Global utility classes if needed */
+.section-padding {
+  padding: 5rem 2rem;
+}
+
+.text-center {
+  text-align: center;
+}

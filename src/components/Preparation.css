@@ -1,0 +1,66 @@
+.preparation {
+    background-color: #f9f9f9;
+}
+
+.prep-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.prep-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border-top: 4px solid var(--secondary-color);
+}
+
+.prep-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.prep-card .subtitle {
+    display: block;
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
+
+.prep-card ol,
+.prep-card ul {
+    padding-right: 1.5rem;
+}
+
+.prep-card li {
+    margin-bottom: 0.8rem;
+}
+
+.check-list {
+    list-style: none;
+    padding-right: 0 !important;
+}
+
+.check-list li {
+    position: relative;
+    padding-right: 1.5rem;
+}
+
+.check-list li::before {
+    content: '•';
+    color: var(--secondary-color);
+    font-weight: bold;
+    position: absolute;
+    right: 0;
+}
+
+.prep-card.important {
+    border-top-color: #d32f2f;
+    /* Red for medical attention */
+}
+
+.prep-card.important h3 {
+    color: #d32f2f;
+}

@@ -1,0 +1,252 @@
+/* Editorial Design - Modern & Clean */
+.about-section {
+    padding: var(--section-padding);
+    background-color: var(--background-color);
+    position: relative;
+    overflow: hidden;
+    /* Soft, premium background without heavy patterns */
+    background-image: linear-gradient(to bottom right, var(--accent-color) 0%, var(--white) 100%);
+}
+
+.about-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    position: relative;
+    z-index: 10;
+}
+
+
+
+.divider {
+    width: 60px;
+    height: 3px;
+    background-color: var(--primary-color);
+    margin: 1rem auto;
+    opacity: 0.7;
+}
+
+.about-content-wrapper {
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+    /* Center vertically for better flow */
+    margin-bottom: 6rem;
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    z-index: 5;
+}
+
+/* FLUID PHOTO LAYOUT */
+.about-gallery-grid {
+    flex: 1.4;
+    display: flex;
+    gap: 20px;
+    height: 550px;
+}
+
+/* Left Col: Main Portrait - Clean & Tall */
+.gallery-main-col {
+    flex: 1;
+    height: 100%;
+    margin-top: 0;
+}
+
+.main-img-large {
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+    /* Soft corners */
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+    /* Soft, deep shadow */
+    overflow: hidden;
+    position: relative;
+}
+
+/* Right Col: Editorial Montage */
+.gallery-sub-grid {
+    flex: 1.2;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 12px;
+    height: 100%;
+}
+
+.sub-row {
+    flex: 1;
+    display: flex;
+    gap: 20px;
+}
+
+.img-card {
+    position: relative;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: all 0.4s ease;
+    width: 100%;
+    height: 100%;
+    /* NO BORDERS, NO OUTLINES */
+    background: #fff;
+    /* Fallback */
+}
+
+.img-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.15);
+}
+
+.img-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    /* Fix for heads being cut off */
+    transition: transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.img-card:hover img {
+    transform: scale(1.05);
+}
+
+/* TEXT - INTEGRATED & CLEAN */
+.about-text-container {
+    flex: 1;
+    min-width: 300px;
+    padding-left: 2rem;
+    /* Breathing room */
+}
+
+.about-text-content {
+    /* REMOVED background, borders, blur */
+    background: transparent;
+    padding: 0;
+    box-shadow: none;
+    border: none;
+
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: var(--text-color);
+    text-align: right;
+}
+
+.about-text-content p {
+    margin-bottom: 2rem;
+    color: var(--text-body);
+    /* Softer gray */
+}
+
+/* Typography Highlights */
+.highlight-text {
+    font-size: 1.8rem;
+    color: var(--secondary-color);
+    font-weight: 300;
+    /* Elegant light weight */
+    display: block;
+    margin-bottom: 1.5rem;
+    line-height: 1.3;
+}
+
+.gold-accent {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+strong {
+    font-weight: 600;
+    color: var(--secondary-color);
+}
+
+/* Features - Minimalist */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2.5rem;
+    max-width: var(--container-width);
+    margin: 0 auto;
+}
+
+.feature-card {
+    background: #fff;
+    padding: 2.5rem 2rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    /* Extremely subtle */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    display: inline-block;
+}
+
+.feature-card h3 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.feature-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+@media (max-width: 1024px) {
+    .about-content-wrapper {
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .about-gallery-grid {
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+    }
+
+    .gallery-sub-grid {
+        flex-direction: row;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        height: auto;
+        gap: 10px;
+    }
+
+    .main-img-large {
+        height: 400px;
+    }
+
+    .about-text-container {
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .about-text-content {
+        text-align: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .gallery-sub-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        height: auto;
+        gap: 8px;
+    }
+
+    .sub-row {
+        display: contents;
+        /* Flattens the flex rows into the grid */
+    }
+}
