@@ -34,6 +34,18 @@
     border-top: 4px solid var(--primary-color);
 }
 
+.prep-card.instructions h3 {
+    margin-bottom: 0.5rem;
+}
+
+.sub-instruction-title {
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
+
 .prep-card .card-header-row {
     display: flex;
     justify-content: space-between;
@@ -103,8 +115,12 @@
     color: #c62828;
     padding: 1rem;
     border-radius: 8px;
-    margin-top: 2rem;
     border-right: 4px solid #c62828;
+}
+
+.top-alert {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
 }
 
 /* Checklist Items */
@@ -151,4 +167,16 @@
     .preparations-section {
         padding: 4rem 1rem;
     }
+}
+
+.checklist-footer {
+    text-align: center;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+    font-size: 1.1rem;
+}
+
+.checklist-footer p {
+    margin: 0.5rem 0;
 }

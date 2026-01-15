@@ -7,17 +7,17 @@ const Preparations = () => {
         '4 חיתולי בד',
         '5 טיטולים',
         'בשמים (הדסים, נענע, ריחן וכדומה)',
-        'יין ענבים תירוש',
-        'משחה בפנטן פלוס (Bepanthen Plus)',
-        'סירופ אקמולי + מזרק',
-        'שמן תינוקות',
+        'יין / מיץ ענבים תירוש',
+        'משחה ויטה מרפן Vita Merfen',
+        'סירופ אקמולי + מזרק / נובימול',
+        'שמן תינוקות / שמן שקדים',
         'כרית בינונית (רצוי קשה מעט)',
         '2 טליתות (לסנדק, אבי הבן)',
         'צלחת חול קטנה'
     ]
 
     const handleShare = async () => {
-        const text = `רשימת ציוד לברית המילה - ברית ציון:\n\n${whatToBring.map(item => `- ${item}`).join('\n')}\n\nנתראה בשמחות!`;
+        const text = `רשימת ציוד לברית המילה - ברית ציון:\n\n${whatToBring.map(item => `- ${item}`).join('\n')}\n\nהרבה מצב רוח טוב\nנתראה בשמחות!`;
 
         if (navigator.share) {
             try {
@@ -51,27 +51,26 @@ const Preparations = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                     >
-                        <h3>הנחיות חשובות (45 דקות לפני הברית)</h3>
+                        <h3>הנחיות חשובות לפני הברית</h3>
+
+                        <div className="alert-box top-alert">
+                            <strong>חשוב!</strong>
+                            <p>אין להאכיל את התינוק שעה ורבע לפני הברית.</p>
+                        </div>
+
+                        <div className="instruction-step">
+                            <p>להשקות את התינוק כ-45 דקות לפני הברית.</p>
+                        </div>
+
+                        <h4 className="sub-instruction-title">אופן הכנת התמיסה:</h4>
+
                         <div className="instruction-step">
                             <span className="step-number">1</span>
-                            <p>יש להרתיח מים ולצנן אותם.</p>
+                            <p>יש להרתיח 50cc מים + 2 כפיות סוכר רגיל.</p>
                         </div>
                         <div className="instruction-step">
                             <span className="step-number">2</span>
-                            <p>להכין תמיסה: <strong>50cc מים + 2 כפיות סוכר רגיל</strong>.</p>
-                        </div>
-                        <div className="instruction-step">
-                            <span className="step-number">3</span>
                             <p>לערבב היטב עד להמסה מלאה.</p>
-                        </div>
-                        <div className="instruction-step">
-                            <span className="step-number">4</span>
-                            <p>להשקות את התינוק מהתמיסה כ-45 דקות לפני הברית.</p>
-                        </div>
-
-                        <div className="alert-box">
-                            <strong>חשוב!</strong>
-                            <p>אין להאכיל את התינוק שעה לפני הברית.</p>
                         </div>
                     </motion.div>
 
@@ -92,6 +91,10 @@ const Preparations = () => {
                                 </li>
                             ))}
                         </ul>
+                        <div className="checklist-footer">
+                            <p>הרבה מצב רוח טוב</p>
+                            <p className="highlight-gold">נתראה בשמחות!</p>
+                        </div>
                     </div>
 
                 </div>

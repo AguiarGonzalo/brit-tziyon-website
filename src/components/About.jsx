@@ -80,9 +80,6 @@ const About = () => {
                                 <img src={aboutGrid1} alt="תמונת גלריה" />
                             </div>
                             <div className="img-card sub-img">
-                                <img src={aboutGrid2} alt="תמונת גלריה" />
-                            </div>
-                            <div className="img-card sub-img">
                                 <img src={aboutGrid3} alt="תמונת גלריה" />
                             </div>
                             <div className="img-card sub-img">
@@ -99,14 +96,14 @@ const About = () => {
                         viewport={{ once: true }}
                     >
                         <div className="about-text-content">
-                            <p>
-                                <span className="highlight-text">נעים להכיר, שמי ציון שטרית.</span>
+                            <p className="introduction">
+                                נעים להכיר, שמי ציון שטרית.
                             </p>
                             <p>
-                                אני מוהל מוסמך עם ותק של <span className="gold-accent">מעל 40 שנה</span>. במהלך השנים זכיתי להכניס <span className="gold-accent">למעלה מ-15,000 תינוקות</span> בבריתו של אברהם אבינו.
+                                אני מוהל מוסמך ומומחה עם ותק של <span className="highlight-gold">מעל 40 שנה</span>. במהלך השנים זכיתי להכניס <span className="highlight-gold">למעלה מ-17,000 תינוקות</span> בבריתו של אברהם אבינו.
                             </p>
                             <p>
-                                אני רואה במקצוע שלי <strong>שליחות קודש</strong> ומקפיד על קלה כחמורה, הן בפן ההלכתי והן בפן הרפואי והסטרילי. אני מלווה את המשפחה ברגישות ובמקצועיות, מהרגע הראשון ועד להחלמה המלאה.
+                                אני רואה במקצוע שלי <span className="highlight-blue">שליחות קודש</span> ומקפיד על קלה כחמורה, הן בפן ההלכתי והן בפן הרפואי והסטרילי. אני מלווה את המשפחה ברגישות ובמקצועיות, מהרגע הראשון ועד להחלמה המלאה.
                             </p>
                         </div>
                     </motion.div>

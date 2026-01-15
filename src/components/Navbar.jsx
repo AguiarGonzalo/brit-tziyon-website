@@ -27,9 +27,7 @@ const Navbar = () => {
     return (
         <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
             <div className="navbar-container">
-                <a href="#home" className="logo">
-                    <img src={logo} alt="ברית ציון - מוהל מומחה" style={{ height: '70px', width: 'auto' }} />
-                </a>
+
 
                 {/* Mobile Toggle */}
                 <button
