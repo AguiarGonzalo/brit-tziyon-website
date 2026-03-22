@@ -101,6 +101,8 @@
     font-family: inherit;
     font-size: 1rem;
     transition: border-color 0.3s;
+    text-align: right;
+    direction: rtl;
 }
 
 .form-group input:focus,
@@ -130,6 +132,10 @@
     .contact-wrapper {
         flex-direction: column;
     }
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
 }
 
 .form-row {
@@ -144,8 +150,10 @@
 .input-label {
     display: block;
     margin-bottom: 0.5rem;
-    font-size: 0.9rem;
-    color: var(--text-muted);
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-color);
+    text-align: right;
 }
 
 .date-input,
@@ -157,4 +165,6 @@
     font-family: inherit;
     font-size: 1rem;
     background: #fff;
+    text-align: right;
+    direction: rtl;
 }
