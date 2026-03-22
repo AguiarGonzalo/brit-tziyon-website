@@ -140,5 +140,8 @@
     .btn-primary,
     .btn-secondary {
         width: 100%;
+        white-space: nowrap;
+        padding: 1rem 1.5rem;
+        font-size: 1.05rem;
     }
 }

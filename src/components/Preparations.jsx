@@ -40,7 +40,6 @@ const Preparations = () => {
                 <div className="section-header">
                     <h2>הכנות לברית המילה</h2>
                     <div className="divider"></div>
-                    <p className="subtitle">רשימת ציוד והנחיות חשובות לקראת הטקס</p>
                 </div>
 
                 <div className="prep-grid">

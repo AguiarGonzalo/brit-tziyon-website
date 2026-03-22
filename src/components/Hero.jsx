@@ -41,7 +41,7 @@ const Hero = () => {
                         התקשרו עכשיו: 050-5323909
                     </a>
                     <a href="#preparations" className="btn-secondary">
-                        רשימת ציוד לברית
+                        הכנות לברית
                     </a>
                 </motion.div>
             </div>

@@ -122,11 +122,11 @@
 
     .nav-links {
         position: fixed;
-        top: 0;
+        top: var(--header-height);
         right: 0;
         /* RTL menu side */
         width: 75%;
-        height: 100vh;
+        height: calc(100vh - var(--header-height));
         background-color: var(--accent-color);
         flex-direction: column;
         align-items: center;
