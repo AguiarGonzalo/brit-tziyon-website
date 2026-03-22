@@ -45,6 +45,9 @@
   -moz-osx-font-smoothing: grayscale;
 
   --background-alt: #ffffff;
+  
+  /* Force CSS Cache Bust v5 */
+  --cache-bust-v5: "v5";
 }
 
 html {

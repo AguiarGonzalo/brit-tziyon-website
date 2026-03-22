@@ -12,6 +12,7 @@ import FloatingWhatsApp from './components/FloatingWhatsApp'
 import './App.css'
 
 function App() {
+  console.log("App init - cache bust v3");
   return (
     <div className="app-container">
       <Navbar />
