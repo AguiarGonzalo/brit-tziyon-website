@@ -284,7 +284,9 @@
 
     .safety-feature-list li {
         justify-content: flex-start;
+        align-items: flex-start;
         text-align: right;
+        padding-left: 4.5rem;
         transform: none !important;
     }
 

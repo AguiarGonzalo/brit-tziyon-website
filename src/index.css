@@ -59,6 +59,13 @@ html {
   padding: 0;
 }
 
+.container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
 body {
   margin: 0;
   min-width: 320px;
