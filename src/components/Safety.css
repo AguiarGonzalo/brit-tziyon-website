@@ -269,20 +269,22 @@
     .safety-content {
         flex-direction: column;
         gap: 4rem;
-        text-align: center;
+        text-align: right;
+        padding-bottom: 80px;
     }
 
     .safety-text-col {
-        text-align: center;
+        text-align: right;
     }
 
     .lead-text {
-        margin-left: auto;
-        margin-right: auto;
+        margin-left: 0;
+        margin-right: 0;
     }
 
     .safety-feature-list li {
-        justify-content: center;
+        justify-content: flex-start;
+        text-align: right;
         transform: none !important;
     }
 
@@ -292,6 +294,6 @@
     }
 
     .badge-container {
-        justify-content: center;
+        justify-content: flex-start;
     }
 }
