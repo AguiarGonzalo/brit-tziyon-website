@@ -42,6 +42,7 @@
     cursor: zoom-in;
     position: relative;
     border: 1px solid rgba(0, 0, 0, 0.05);
+    aspect-ratio: 3 / 4;
 }
 
 .testimonial-image-card:hover {
@@ -55,6 +56,9 @@
     object-fit: cover;
     display: block;
     transition: transform 0.5s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .testimonial-image-card:hover img {
@@ -142,4 +146,21 @@
 
 .lightbox-close:hover {
     background: rgba(255, 255, 255, 0.4);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .testimonials-grid,
+    .testimonials-grid.gallery-mode {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .testimonials-grid,
+    .testimonials-grid.gallery-mode {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+    }
 }

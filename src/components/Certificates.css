@@ -29,6 +29,7 @@
     transition: transform 0.3s ease;
     cursor: zoom-in;
     /* Indicate clickable */
+    aspect-ratio: 3 / 4;
 }
 
 /* Image Hover Effect */
@@ -39,9 +40,13 @@
 
 .interactive-card img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
     border-radius: 8px;
     transition: transform 0.3s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .image-overlay {
@@ -124,4 +129,18 @@
 
 .lightbox-close:hover {
     background: rgba(0, 0, 0, 0.8);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .certs-grid {
+        gap: 1rem;
+    }
+
+    .cert-card {
+        min-width: 0;
+        width: 100%;
+        max-width: 100%;
+        flex: 1 1 calc(50% - 0.5rem);
+    }
 }
