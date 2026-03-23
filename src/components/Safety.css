@@ -119,7 +119,7 @@
 
 .safety-feature-list li:hover {
     background: #fff;
-    transform: translateX(-5px);
+    transform: translateY(-4px);
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
     border-color: rgba(200, 121, 65, 0.2);
     /* Gold border on hover */

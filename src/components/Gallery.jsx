@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
+import { X, ZoomIn } from 'lucide-react';
 import './Gallery.css';
 
 const Gallery = () => {
     const [images, setImages] = useState([]);
+    const [selectedImage, setSelectedImage] = useState(null);
 
     useEffect(() => {
         const loadImages = async () => {
@@ -26,15 +29,54 @@ const Gallery = () => {
                 {images.length > 0 ? (
                     <div className="gallery-grid">
                         {images.map((imgSrc, index) => (
-                            <div className="gallery-item" key={index}>
+                            <motion.div
+                                className="gallery-item"
+                                key={index}
+                                initial={{ opacity: 0, scale: 0.95 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                viewport={{ once: true }}
+                                onClick={() => setSelectedImage({ src: imgSrc, index })}
+                            >
+                                <div className="gallery-overlay">
+                                    <ZoomIn className="gallery-zoom-icon" size={32} />
+                                </div>
                                 <img src={imgSrc} alt={`טקס ברית ${index + 1}`} loading="lazy" />
-                            </div>
+                            </motion.div>
                         ))}
                     </div>
                 ) : (
                     <p className="text-center">טוען תמונות...</p>
                 )}
             </div>
+
+            {/* Lightbox */}
+            <AnimatePresence>
+                {selectedImage && (
+                    <motion.div
+                        className="gallery-lightbox-overlay"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        onClick={() => setSelectedImage(null)}
+                    >
+                        <motion.div
+                            className="gallery-lightbox-content"
+                            initial={{ scale: 0.8, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            exit={{ scale: 0.8, opacity: 0 }}
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            <button
+                                className="gallery-lightbox-close"
+                                onClick={() => setSelectedImage(null)}
+                            >
+                                <X size={24} />
+                            </button>
+                            <img src={selectedImage.src} alt={`טקס ברית ${selectedImage.index + 1}`} />
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </section>
     );
 };

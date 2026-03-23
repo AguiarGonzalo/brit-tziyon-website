@@ -1,6 +1,5 @@
 import React from 'react'
 import './Contact.css'
-import './Contact.css'
 import { FaWhatsapp, FaInstagram } from 'react-icons/fa'
 
 const Contact = () => {

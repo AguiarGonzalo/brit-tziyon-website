@@ -57,7 +57,8 @@
     padding-bottom: 5px;
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links a.nav-active {
     color: var(--primary-color);
 }
 
@@ -73,7 +74,8 @@
     transition: width 0.3s ease;
 }
 
-.nav-links a:hover::after {
+.nav-links a:hover::after,
+.nav-links a.nav-active::after {
     width: 100%;
 }
 
@@ -103,16 +105,40 @@
     border: none;
     cursor: pointer;
     flex-direction: column;
-    gap: 6px;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
     z-index: 1001;
+    width: 44px;
+    height: 44px;
+    padding: 6px;
+    border-radius: 8px;
+    transition: background 0.2s ease;
+}
+
+.menu-toggle:hover {
+    background: rgba(0, 0, 0, 0.05);
 }
 
 .bar {
-    width: 30px;
-    height: 3px;
+    width: 26px;
+    height: 2.5px;
     background-color: var(--secondary-color);
-    transition: 0.3s;
+    transition: transform 0.3s ease, opacity 0.3s ease;
     border-radius: 2px;
+    display: block;
+}
+
+/* Animación X cuando el menú está abierto */
+.menu-toggle.open .bar:nth-child(1) {
+    transform: translateY(7.5px) rotate(45deg);
+}
+.menu-toggle.open .bar:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+.menu-toggle.open .bar:nth-child(3) {
+    transform: translateY(-7.5px) rotate(-45deg);
 }
 
 /* Mobile Responsiveness */

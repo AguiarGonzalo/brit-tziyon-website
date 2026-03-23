@@ -19,7 +19,7 @@
     max-width: 500px;
     background: #fff;
     border: 1px solid #eee;
-    border-radius: 12px;
+    border-radius: var(--radius-md);
     padding: 1.5rem;
     /* Reduced padding for cleaner look */
     text-align: center;
