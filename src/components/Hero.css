@@ -3,7 +3,8 @@
     /* Full screen */
     min-height: 700px;
     /* Use the new premium background */
-    background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.4)), url('/hero-bg.jpg');
+    background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.4)),
+        image-set(url('/hero-bg.webp') type('image/webp'), url('/hero-bg.jpg') type('image/jpeg'));
     background-size: cover;
     background-position: center;
     background-attachment: fixed;

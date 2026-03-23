@@ -17,7 +17,7 @@ const Certificates = () => {
 
     useEffect(() => {
         const loadImages = async () => {
-            const imageModules = import.meta.glob('../assets/images/certificates/*.{png,jpg,jpeg,PNG,JPG}')
+            const imageModules = import.meta.glob('../assets/images/certificates/*.{png,webp,jpg,jpeg,PNG,JPG}')
             const loadedImages = await Promise.all(
                 Object.values(imageModules).map((importImage) => importImage())
             )

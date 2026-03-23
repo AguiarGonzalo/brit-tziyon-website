@@ -17,7 +17,7 @@ const Recommendations = () => {
 
     useEffect(() => {
         const loadImages = async () => {
-            const imageModules = import.meta.glob('../assets/images/recommendations/*.{png,jpg,jpeg,PNG,JPG}')
+            const imageModules = import.meta.glob('../assets/images/recommendations/*.{png,webp,jpg,jpeg,PNG,JPG}')
             const loadedImages = await Promise.all(
                 Object.values(imageModules).map((importImage) => importImage())
             )

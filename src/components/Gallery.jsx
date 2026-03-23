@@ -17,7 +17,7 @@ const Gallery = () => {
 
     useEffect(() => {
         const loadImages = async () => {
-            const imageModules = import.meta.glob('../assets/images/gallery/*.{png,jpg,jpeg,PNG,JPG,psd}');
+            const imageModules = import.meta.glob('../assets/images/gallery/*.{png,webp,jpg,jpeg,PNG,JPG}');
             const loadedImages = await Promise.all(
                 Object.values(imageModules).map((importImage) => importImage())
             );

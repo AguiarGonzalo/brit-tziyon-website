@@ -43,9 +43,17 @@ const Contact = () => {
             return
         }
 
-        const whatsappMessage = `שלום, אשמח לפרטים לגבי ברית מילה.%0A%0A*שם:* ${name}%0A*טלפון:* ${phone}%0A*תאריך משוער:* ${date}%0A*שעה מועדפת:* ${time || 'לא צוין'}%0A*הודעה:* ${message || 'ללא הודעה נוספת'}`;
+        const text = [
+            'שלום, אשמח לפרטים לגבי ברית מילה.',
+            '',
+            `*שם:* ${name}`,
+            `*טלפון:* ${phone}`,
+            `*תאריך משוער:* ${date}`,
+            `*שעה מועדפת:* ${time || 'לא צוין'}`,
+            `*הודעה:* ${message || 'ללא הודעה נוספת'}`,
+        ].join('\n');
 
-        const whatsappUrl = `https://wa.me/972505323909?text=${whatsappMessage}`;
+        const whatsappUrl = `https://wa.me/972505323909?text=${encodeURIComponent(text)}`;
 
         window.open(whatsappUrl, '_blank');
     };
