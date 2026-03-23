@@ -36,6 +36,11 @@ const Recommendations = () => {
                 </div>
 
                 <div className="testimonials-grid gallery-mode">
+                    {recImages.length === 0
+                        ? Array.from({ length: 6 }).map((_, i) => (
+                            <div key={i} className="testimonial-image-card skeleton" />
+                        ))
+                        : null}
                     {recImages.map((imgSrc, index) => (
                         <motion.div
                             key={index}

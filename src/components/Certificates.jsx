@@ -41,6 +41,11 @@ const Certificates = () => {
                 </motion.div>
 
                 <div className="certs-grid">
+                    {certImages.length === 0
+                        ? Array.from({ length: 3 }).map((_, i) => (
+                            <div key={i} className="cert-card skeleton" />
+                        ))
+                        : null}
                     {certImages.map((imgSrc, index) => (
                         <motion.div
                             key={index}

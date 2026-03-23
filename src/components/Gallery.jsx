@@ -34,9 +34,9 @@ const Gallery = () => {
                     <div className="divider mx-auto"></div>
                 </div>
 
-                {images.length > 0 ? (
-                    <div className="gallery-grid">
-                        {images.map((imgSrc, index) => (
+                <div className="gallery-grid">
+                    {images.length > 0
+                        ? images.map((imgSrc, index) => (
                             <motion.div
                                 className="gallery-item"
                                 key={index}
@@ -50,11 +50,12 @@ const Gallery = () => {
                                 </div>
                                 <img src={imgSrc} alt={`טקס ברית ${index + 1}`} loading="lazy" />
                             </motion.div>
-                        ))}
-                    </div>
-                ) : (
-                    <p className="text-center">טוען תמונות...</p>
-                )}
+                        ))
+                        : Array.from({ length: 8 }).map((_, i) => (
+                            <div key={i} className="gallery-item skeleton" />
+                        ))
+                    }
+                </div>
             </div>
 
             {/* Lightbox */}
