@@ -11,18 +11,37 @@ const Contact = () => {
         message: ''
     });
 
+    const [phoneError, setPhoneError] = React.useState('');
+
+    const validatePhone = (phone) => {
+        // Remove spaces and dashes
+        const cleaned = phone.replace(/[\s\-]/g, '')
+        // Israeli phone: 10 digits starting with 0, or +972 format
+        const israeliPhone = /^0[2-9]\d{7,8}$/.test(cleaned)
+        const internationalPhone = /^\+?972[2-9]\d{7,8}$/.test(cleaned)
+        return israeliPhone || internationalPhone
+    }
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData(prev => ({
             ...prev,
             [name]: value
         }));
+        if (name === 'phone') {
+            setPhoneError('')
+        }
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
         const { name, phone, date, time, message } = formData;
+
+        if (!validatePhone(phone)) {
+            setPhoneError('נא להזין מספר טלפון ישראלי תקין (לדוגמה: 050-1234567)')
+            return
+        }
 
         const whatsappMessage = `שלום, אשמח לפרטים לגבי ברית מילה.%0A%0A*שם:* ${name}%0A*טלפון:* ${phone}%0A*תאריך משוער:* ${date}%0A*שעה מועדפת:* ${time || 'לא צוין'}%0A*הודעה:* ${message || 'ללא הודעה נוספת'}`;
 
@@ -104,11 +123,15 @@ const Contact = () => {
                             <input
                                 type="tel"
                                 name="phone"
-                                placeholder="טלפון"
+                                placeholder="טלפון (לדוגמה: 050-1234567)"
                                 required
                                 value={formData.phone}
                                 onChange={handleChange}
+                                className={phoneError ? 'input-error' : ''}
                             />
+                            {phoneError && (
+                                <p className="field-error">{phoneError}</p>
+                            )}
                         </div>
                         <div className="form-row">
                             <div className="form-group">

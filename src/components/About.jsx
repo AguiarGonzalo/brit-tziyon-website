@@ -18,6 +18,14 @@ import { ShieldCheck, Star, HeartHandshake, Sparkles } from 'lucide-react'
 const About = () => {
     const [selectedImage, setSelectedImage] = useState(null)
 
+    useEffect(() => {
+        const handleKeyDown = (e) => {
+            if (e.key === 'Escape') setSelectedImage(null)
+        }
+        window.addEventListener('keydown', handleKeyDown)
+        return () => window.removeEventListener('keydown', handleKeyDown)
+    }, [])
+
     const features = [
         {
             title: "שקט נפשי לאמא ולתינוק",

@@ -156,6 +156,18 @@
     text-align: right;
 }
 
+.input-error {
+    border-color: #e53e3e !important;
+    background-color: #fff5f5;
+}
+
+.field-error {
+    color: #e53e3e;
+    font-size: 0.85rem;
+    margin-top: 0.4rem;
+    text-align: right;
+}
+
 .date-input,
 .time-input {
     width: 100%;

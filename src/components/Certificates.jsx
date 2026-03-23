@@ -8,6 +8,14 @@ const Certificates = () => {
     const [selectedImage, setSelectedImage] = useState(null)
 
     useEffect(() => {
+        const handleKeyDown = (e) => {
+            if (e.key === 'Escape') setSelectedImage(null)
+        }
+        window.addEventListener('keydown', handleKeyDown)
+        return () => window.removeEventListener('keydown', handleKeyDown)
+    }, [])
+
+    useEffect(() => {
         const loadImages = async () => {
             const imageModules = import.meta.glob('../assets/images/certificates/*.{png,jpg,jpeg,PNG,JPG}')
             const loadedImages = await Promise.all(
