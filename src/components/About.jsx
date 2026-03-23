@@ -1,4 +1,6 @@
-import { motion } from 'framer-motion'
+import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { X } from 'lucide-react'
 import './About.css'
 import aboutHighlight from '../assets/images/about-highlight.jpg'
 import aboutImage from '../assets/images/about-image.jpg'
@@ -14,6 +16,8 @@ import aboutGrid4 from '../assets/images/about-grid-4.jpg'
 import { ShieldCheck, Star, HeartHandshake, Sparkles } from 'lucide-react'
 
 const About = () => {
+    const [selectedImage, setSelectedImage] = useState(null)
+
     const features = [
         {
             title: "שקט נפשי לאמא ולתינוק",
@@ -37,6 +41,18 @@ const About = () => {
         }
     ]
 
+    const allImages = [
+        { src: aboutHighlight, alt: "המוהל ציון שטרית מחזיק תינוק" },
+        { src: aboutImage, alt: "המוהל ציון שטרית" },
+        { src: aboutAction, alt: "בברית מילה" },
+        { src: aboutRabbi, alt: "עם הרב באבא ברוך" },
+        { src: aboutPortrait, alt: "ציון שטרית" },
+        { src: aboutEvent, alt: "אירוע ברית" },
+        { src: aboutGrid1, alt: "תמונת גלריה" },
+        { src: aboutGrid3, alt: "תמונת גלריה" },
+        { src: aboutGrid4, alt: "תמונת גלריה" },
+    ]
+
     return (
         <section className="about-section">
             <div className="container">
@@ -54,41 +70,29 @@ const About = () => {
                     >
                         {/* Main Large Portrait (Left Column) */}
                         <div className="gallery-main-col">
-                            <div className="img-card main-img-large">
+                            <div
+                                className="img-card main-img-large about-clickable"
+                                onClick={() => setSelectedImage(allImages[0])}
+                            >
                                 <img src={aboutHighlight} alt="המוהל ציון שטרית מחזיק תינוק" />
                             </div>
                         </div>
 
-                        {/* 3x3 Grid (Right Column) - All 9 remaining images */}
+                        {/* 3x3 Grid (Right Column) */}
                         <div className="gallery-sub-grid">
-                            <div className="img-card sub-img">
-                                <img src={aboutImage} alt="המוהל ציון שטרית" />
-                            </div>
-                            <div className="img-card sub-img">
-                                <img src={aboutAction} alt="בברית מילה" />
-                            </div>
-                            <div className="img-card sub-img">
-                                <img src={aboutRabbi} alt="עם הרב באבא ברוך" />
-                            </div>
-                            <div className="img-card sub-img">
-                                <img src={aboutPortrait} alt="ציון שטרית" />
-                            </div>
-                            <div className="img-card sub-img">
-                                <img src={aboutEvent} alt="אירוע ברית" />
-                            </div>
-                            <div className="img-card sub-img">
-                                <img src={aboutGrid1} alt="תמונת גלריה" />
-                            </div>
-                            <div className="img-card sub-img">
-                                <img src={aboutGrid3} alt="תמונת גלריה" />
-                            </div>
-                            <div className="img-card sub-img">
-                                <img src={aboutGrid4} alt="תמונת גלריה" />
-                            </div>
+                            {allImages.slice(1).map((img, index) => (
+                                <div
+                                    key={index}
+                                    className="img-card sub-img about-clickable"
+                                    onClick={() => setSelectedImage(img)}
+                                >
+                                    <img src={img.src} alt={img.alt} />
+                                </div>
+                            ))}
                         </div>
                     </motion.div>
 
-                    {/* Text Container... */}
+                    {/* Text Container */}
                     <motion.div
                         className="about-text-container"
                         initial={{ opacity: 0, x: -50 }}
@@ -126,6 +130,35 @@ const About = () => {
                     ))}
                 </div>
             </div>
+
+            {/* Lightbox */}
+            <AnimatePresence>
+                {selectedImage && (
+                    <motion.div
+                        className="about-lightbox-overlay"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        onClick={() => setSelectedImage(null)}
+                    >
+                        <motion.div
+                            className="about-lightbox-content"
+                            initial={{ scale: 0.8, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            exit={{ scale: 0.8, opacity: 0 }}
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            <button
+                                className="about-lightbox-close"
+                                onClick={() => setSelectedImage(null)}
+                            >
+                                <X size={24} />
+                            </button>
+                            <img src={selectedImage.src} alt={selectedImage.alt} />
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </section>
     )
 }
