@@ -97,7 +97,7 @@ const About = () => {
                                     onClick={() => setSelectedImage(img)}
                                 >
                                     <img src={img.src} alt={img.alt} />
-                                </div>
+                            </div>
                             ))}
                         </div>
                     </motion.div>

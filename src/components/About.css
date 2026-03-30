@@ -68,22 +68,10 @@
 .gallery-sub-grid {
     flex: 1.2;
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    /* 6 columns for flexibility */
+    grid-template-columns: repeat(3, 1fr);
     grid-auto-rows: 1fr;
     gap: 12px;
     height: 100%;
-}
-
-.gallery-sub-grid .img-card {
-    grid-column: span 2;
-    /* Default: span 2 of 6 ( = 1/3 width) */
-}
-
-/* The last two items (7th and 8th) span 3 columns ( = 1/2 width) */
-.gallery-sub-grid .img-card:nth-last-child(1),
-.gallery-sub-grid .img-card:nth-last-child(2) {
-    grid-column: span 3;
 }
 
 .sub-row {
@@ -242,10 +230,7 @@ strong {
     }
 
     /* En tablet, todos los items del sub-grid con el mismo tamaño */
-    .gallery-sub-grid .img-card,
-    .gallery-sub-grid .img-card:nth-last-child(1),
-    .gallery-sub-grid .img-card:nth-last-child(2) {
-        grid-column: span 1;
+    .gallery-sub-grid .img-card {
         aspect-ratio: 1 / 1;
         height: auto;
     }
@@ -289,11 +274,8 @@ strong {
         gap: 8px;
     }
 
-    /* Todos los items del sub-grid: mismo tamaño, 1 columna cada uno */
-    .gallery-sub-grid .img-card,
-    .gallery-sub-grid .img-card:nth-last-child(1),
-    .gallery-sub-grid .img-card:nth-last-child(2) {
-        grid-column: span 1;
+    /* Todos los items del sub-grid: mismo tamaño */
+    .gallery-sub-grid .img-card {
         aspect-ratio: 1 / 1;
         height: auto;
     }
