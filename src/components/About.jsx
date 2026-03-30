@@ -12,6 +12,7 @@ import aboutGrid1 from '../assets/images/about-grid-1.webp'
 import aboutGrid2 from '../assets/images/about-grid-2.webp'
 import aboutGrid3 from '../assets/images/about-grid-3.webp'
 import aboutGrid4 from '../assets/images/about-grid-4.webp'
+import babaSali from '../assets/images/gallery/baba-sali.webp'
 
 import { ShieldCheck, Star, HeartHandshake, Sparkles } from 'lucide-react'
 
@@ -51,6 +52,7 @@ const About = () => {
 
     const allImages = [
         { src: aboutHighlight, alt: "המוהל ציון שטרית מחזיק תינוק" },
+        { src: babaSali, alt: 'הרב שטרית עם הבבא סאלי זצוק"ל', caption: 'הרב שטרית מלווה בברכת הרבנים, בראשם "הבבא סאלי" זצוק"ל, שסמך ידיו על ראשו וברכו להצלחה' },
         { src: aboutImage, alt: "המוהל ציון שטרית" },
         { src: aboutAction, alt: "בברית מילה" },
         { src: aboutRabbi, alt: "עם הרב באבא ברוך" },
@@ -163,6 +165,9 @@ const About = () => {
                                 <X size={24} />
                             </button>
                             <img src={selectedImage.src} alt={selectedImage.alt} />
+                            {selectedImage.caption && (
+                                <p className="about-lightbox-caption">{selectedImage.caption}</p>
+                            )}
                         </motion.div>
                     </motion.div>
                 )}
