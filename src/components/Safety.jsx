@@ -31,7 +31,6 @@ const Safety = () => {
                             {[
                                 { text: "ערכה אישית וסטרילית (Autoclave) הנפתחת מולכם", icon: <CheckCircle2 /> },
                                 { text: "שימוש בחומרים חד-פעמיים באישור משרד הבריאות", icon: <CheckCircle2 /> },
-                                { text: "כפפות סטריליות וחיטוי יסודי לכל אורך הטקס", icon: <CheckCircle2 /> },
                                 { text: "זמינות מקסימלית למעקב וביקורת ביום שאחרי", icon: <CheckCircle2 /> }
                             ].map((item, index) => (
                                 <motion.li

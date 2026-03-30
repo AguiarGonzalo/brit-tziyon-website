@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { X, ZoomIn } from 'lucide-react';
 import './Gallery.css';
+import babaSaliImg from '../assets/images/gallery/baba-sali.webp';
+
+const BABA_SALI_CAPTION = 'הרב שטרית מלווה בברכת הרבנים, בראשם "הבבא סאלי" זצוק"ל, שסמך ידיו על ראשו וברכו להצלחה';
 
 const Gallery = () => {
     const [images, setImages] = useState([]);
@@ -19,9 +22,18 @@ const Gallery = () => {
         const loadImages = async () => {
             const imageModules = import.meta.glob('../assets/images/gallery/*.webp');
             const loadedImages = await Promise.all(
-                Object.values(imageModules).map((importImage) => importImage())
+                Object.entries(imageModules)
+                    .filter(([path]) => !path.includes('baba-sali'))
+                    .map(([, importImage]) => importImage())
             );
-            setImages(loadedImages.map((module) => module.default));
+            const otherImages = loadedImages.map((module) => ({ src: module.default, caption: null }));
+            // Insert baba-sali as the second image (index 1)
+            const ordered = [
+                otherImages[0],
+                { src: babaSaliImg, caption: BABA_SALI_CAPTION },
+                ...otherImages.slice(1)
+            ].filter(Boolean);
+            setImages(ordered);
         };
         loadImages();
     }, []);
@@ -36,19 +48,22 @@ const Gallery = () => {
 
                 <div className="gallery-grid">
                     {images.length > 0
-                        ? images.map((imgSrc, index) => (
+                        ? images.map((img, index) => (
                             <motion.div
-                                className="gallery-item"
+                                className={`gallery-item${img.caption ? ' gallery-item-featured' : ''}`}
                                 key={index}
                                 initial={{ opacity: 0, scale: 0.95 }}
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 viewport={{ once: true }}
-                                onClick={() => setSelectedImage({ src: imgSrc, index })}
+                                onClick={() => setSelectedImage({ src: img.src, caption: img.caption, index })}
                             >
                                 <div className="gallery-overlay">
                                     <ZoomIn className="gallery-zoom-icon" size={32} />
                                 </div>
-                                <img src={imgSrc} alt={`טקס ברית ${index + 1}`} loading="lazy" />
+                                <img src={img.src} alt={img.caption || `טקס ברית ${index + 1}`} loading="lazy" />
+                                {img.caption && (
+                                    <div className="gallery-item-caption">{img.caption}</div>
+                                )}
                             </motion.div>
                         ))
                         : Array.from({ length: 8 }).map((_, i) => (
@@ -81,7 +96,10 @@ const Gallery = () => {
                             >
                                 <X size={24} />
                             </button>
-                            <img src={selectedImage.src} alt={`טקס ברית ${selectedImage.index + 1}`} />
+                            <img src={selectedImage.src} alt={selectedImage.caption || `טקס ברית ${selectedImage.index + 1}`} />
+                            {selectedImage.caption && (
+                                <p className="gallery-lightbox-caption">{selectedImage.caption}</p>
+                            )}
                         </motion.div>
                     </motion.div>
                 )}
