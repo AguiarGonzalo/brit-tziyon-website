@@ -1,5 +1,6 @@
 import './Footer.css'
 import { FaInstagram } from 'react-icons/fa'
+import { CONTACT } from '../config'
 
 const Footer = () => {
     return (
@@ -11,9 +12,9 @@ const Footer = () => {
                         <p>המוהל ציון שטרית - מוהל מוסמך ומומחה</p>
                     </div>
                     <div className="footer-contact">
-                        <a href="tel:0505323909">050-5323909</a>
+                        <a href={`tel:${CONTACT.phone}`}>{CONTACT.phoneDisplay}</a>
                         <a
-                            href="https://www.instagram.com/p/DMIw4OWt7zA/?igsh=bnAzaGRrcjhqOHJr"
+                            href={CONTACT.instagramUrl}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="footer-social-link"
@@ -24,7 +25,7 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className="footer-bottom">
-                    <p>© 2024 כל הזכויות שמורות - ברית ציון</p>
+                    <p>© {new Date().getFullYear()} כל הזכויות שמורות - ברית ציון</p>
                 </div>
             </div>
         </footer>

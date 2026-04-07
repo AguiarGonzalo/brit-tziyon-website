@@ -1,6 +1,7 @@
 import React from 'react';
 import './Hero.css';
 import { motion } from 'framer-motion'
+import { CONTACT } from '../config'
 
 const Hero = () => {
     return (
@@ -37,8 +38,8 @@ const Hero = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.4 }}
                 >
-                    <a href="tel:0505323909" className="btn-primary">
-                        התקשרו עכשיו: 050-5323909
+                    <a href={`tel:${CONTACT.phone}`} className="btn-primary">
+                        התקשרו עכשיו: {CONTACT.phoneDisplay}
                     </a>
                     <a href="#preparations" className="btn-secondary">
                         הכנות לברית

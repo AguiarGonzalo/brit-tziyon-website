@@ -1,11 +1,12 @@
 import React from 'react';
 import { FaWhatsapp } from 'react-icons/fa';
 import './FloatingWhatsApp.css';
+import { CONTACT } from '../config';
 
 const FloatingWhatsApp = () => {
     return (
         <a
-            href="https://wa.me/972505323909"
+            href={`https://wa.me/${CONTACT.whatsapp}`}
             target="_blank"
             rel="noopener noreferrer"
             className="floating-whatsapp"

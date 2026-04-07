@@ -1,6 +1,7 @@
 import React from 'react'
 import './Contact.css'
 import { FaWhatsapp, FaInstagram } from 'react-icons/fa'
+import { CONTACT } from '../config'
 
 const Contact = () => {
     const [formData, setFormData] = React.useState({
@@ -53,7 +54,7 @@ const Contact = () => {
             `*הודעה:* ${message || 'ללא הודעה נוספת'}`,
         ].join('\n');
 
-        const whatsappUrl = `https://wa.me/972505323909?text=${encodeURIComponent(text)}`;
+        const whatsappUrl = `https://wa.me/${CONTACT.whatsapp}?text=${encodeURIComponent(text)}`;
 
         window.open(whatsappUrl, '_blank');
     };
@@ -72,7 +73,7 @@ const Contact = () => {
                             <span className="icon">📞</span>
                             <div>
                                 <h3>טלפון</h3>
-                                <a href="tel:0505323909" className="contact-link">050-5323909</a>
+                                <a href={`tel:${CONTACT.phone}`} className="contact-link">{CONTACT.phoneDisplay}</a>
                             </div>
                         </div>
 
@@ -81,7 +82,7 @@ const Contact = () => {
                             <div>
                                 <h3>WhatsApp</h3>
                                 <a
-                                    href="https://wa.me/972505323909"
+                                    href={`https://wa.me/${CONTACT.whatsapp}`}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="contact-link"
@@ -96,7 +97,7 @@ const Contact = () => {
                             <div>
                                 <h3>Instagram</h3>
                                 <a
-                                    href="https://www.instagram.com/p/DMIw4OWt7zA/?igsh=bnAzaGRrcjhqOHJr"
+                                    href={CONTACT.instagramUrl}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="contact-link"
