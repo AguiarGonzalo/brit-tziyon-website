@@ -1,16 +1,75 @@
-# React + Vite
+# Brit Tziyon — Sitio Web
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Sitio web institucional para el rabino Gonzalo, especialista en ceremonias de Brit Milá. Desarrollado con React + Vite y publicado en Netlify.
 
-Currently, two official plugins are available:
+**Sitio en producción:** https://app.netlify.com/projects/brit-tziyon-website/overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## Stack tecnológico
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **React 19** con Vite como bundler
+- **Framer Motion** para animaciones
+- **Lucide React** y **React Icons** para íconos
+- **CSS modular** por componente (sin framework de estilos)
+- **Netlify** para deploy automático desde `main`
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Estructura del proyecto
+
+```
+brit-tziyon-website/
+├── public/              # Assets estáticos (imágenes, etc.)
+├── src/
+│   ├── components/      # Componentes de la página
+│   │   ├── Navbar            # Barra de navegación
+│   │   ├── Hero              # Sección principal / banner
+│   │   ├── About             # Sobre el rabino
+│   │   ├── Preparations      # Preparativos para la ceremonia
+│   │   ├── Safety            # Información de seguridad
+│   │   ├── Certificates      # Certificados y formación
+│   │   ├── Gallery           # Galería de fotos
+│   │   ├── Testimonials      # Testimonios de familias
+│   │   ├── Recommendations   # Recomendaciones
+│   │   ├── Contact           # Formulario / datos de contacto
+│   │   ├── Footer            # Pie de página
+│   │   └── FloatingWhatsApp  # Botón flotante de WhatsApp
+│   ├── App.jsx           # Componente raíz
+│   └── main.jsx          # Entry point
+├── index.html
+├── vite.config.js
+└── package.json
+```
+
+---
+
+## Cómo correr el proyecto localmente
+
+```bash
+# Instalar dependencias
+npm install
+
+# Servidor de desarrollo (http://localhost:5173)
+npm run dev
+
+# Build de producción
+npm run build
+
+# Preview del build
+npm run preview
+```
+
+---
+
+## Deploy
+
+El proyecto está conectado a **Netlify**. Cada push a la rama `main` dispara un deploy automático.
+
+Panel de Netlify: https://app.netlify.com/projects/brit-tziyon-website/overview
+
+---
+
+## Agregar imágenes a la galería
+
+Las imágenes de la galería se cargan automáticamente desde `public/` usando un glob de Vite. Para agregar fotos nuevas, simplemente copiá el archivo `.webp` a la carpeta `public/` y hacé push. No hace falta modificar código.
