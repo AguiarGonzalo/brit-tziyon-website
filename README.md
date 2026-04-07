@@ -1,4 +1,4 @@
-# Brit Tziyon — Website
+# Brit Zion — Website
 
 Institutional website for Rabbi Gonzalo, a specialist in Brit Milah ceremonies. Built with React + Vite and deployed on Netlify.
 
