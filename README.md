@@ -1,41 +1,41 @@
-# Brit Tziyon — Sitio Web
+# Brit Tziyon — Website
 
-Sitio web institucional para el rabino Gonzalo, especialista en ceremonias de Brit Milá. Desarrollado con React + Vite y publicado en Netlify.
+Institutional website for Rabbi Gonzalo, a specialist in Brit Milah ceremonies. Built with React + Vite and deployed on Netlify.
 
-**Sitio en producción:** https://app.netlify.com/projects/brit-tziyon-website/overview
-
----
-
-## Stack tecnológico
-
-- **React 19** con Vite como bundler
-- **Framer Motion** para animaciones
-- **Lucide React** y **React Icons** para íconos
-- **CSS modular** por componente (sin framework de estilos)
-- **Netlify** para deploy automático desde `main`
+**Live site:** https://app.netlify.com/projects/brit-tziyon-website/overview
 
 ---
 
-## Estructura del proyecto
+## Tech Stack
+
+- **React 19** with Vite as the bundler
+- **Framer Motion** for animations
+- **Lucide React** and **React Icons** for icons
+- **Modular CSS** per component (no CSS framework)
+- **Netlify** for automatic deploys from `main`
+
+---
+
+## Project Structure
 
 ```
 brit-tziyon-website/
-├── public/              # Assets estáticos (imágenes, etc.)
+├── public/              # Static assets (images, etc.)
 ├── src/
-│   ├── components/      # Componentes de la página
-│   │   ├── Navbar            # Barra de navegación
-│   │   ├── Hero              # Sección principal / banner
-│   │   ├── About             # Sobre el rabino
-│   │   ├── Preparations      # Preparativos para la ceremonia
-│   │   ├── Safety            # Información de seguridad
-│   │   ├── Certificates      # Certificados y formación
-│   │   ├── Gallery           # Galería de fotos
-│   │   ├── Testimonials      # Testimonios de familias
-│   │   ├── Recommendations   # Recomendaciones
-│   │   ├── Contact           # Formulario / datos de contacto
-│   │   ├── Footer            # Pie de página
-│   │   └── FloatingWhatsApp  # Botón flotante de WhatsApp
-│   ├── App.jsx           # Componente raíz
+│   ├── components/      # Page components
+│   │   ├── Navbar            # Navigation bar
+│   │   ├── Hero              # Hero / banner section
+│   │   ├── About             # About the rabbi
+│   │   ├── Preparations      # Ceremony preparation info
+│   │   ├── Safety            # Safety information
+│   │   ├── Certificates      # Certifications and training
+│   │   ├── Gallery           # Photo gallery
+│   │   ├── Testimonials      # Family testimonials
+│   │   ├── Recommendations   # Recommendations
+│   │   ├── Contact           # Contact form / details
+│   │   ├── Footer            # Page footer
+│   │   └── FloatingWhatsApp  # Floating WhatsApp button
+│   ├── App.jsx           # Root component
 │   └── main.jsx          # Entry point
 ├── index.html
 ├── vite.config.js
@@ -44,32 +44,32 @@ brit-tziyon-website/
 
 ---
 
-## Cómo correr el proyecto localmente
+## Running Locally
 
 ```bash
-# Instalar dependencias
+# Install dependencies
 npm install
 
-# Servidor de desarrollo (http://localhost:5173)
+# Development server (http://localhost:5173)
 npm run dev
 
-# Build de producción
+# Production build
 npm run build
 
-# Preview del build
+# Preview the build
 npm run preview
 ```
 
 ---
 
-## Deploy
+## Deployment
 
-El proyecto está conectado a **Netlify**. Cada push a la rama `main` dispara un deploy automático.
+The project is connected to **Netlify**. Every push to the `main` branch triggers an automatic deploy.
 
-Panel de Netlify: https://app.netlify.com/projects/brit-tziyon-website/overview
+Netlify dashboard: https://app.netlify.com/projects/brit-tziyon-website/overview
 
 ---
 
-## Agregar imágenes a la galería
+## Adding Images to the Gallery
 
-Las imágenes de la galería se cargan automáticamente desde `public/` usando un glob de Vite. Para agregar fotos nuevas, simplemente copiá el archivo `.webp` a la carpeta `public/` y hacé push. No hace falta modificar código.
+Gallery images are loaded automatically from the `public/` folder using a Vite glob import. To add new photos, simply copy the `.webp` file into the `public/` folder and push. No code changes needed.
