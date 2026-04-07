@@ -26,7 +26,7 @@ const Preparations = () => {
                     text: text,
                 })
             } catch (err) {
-                console.log('Error sharing:', err)
+                // sharing cancelled or failed silently
             }
         } else {
             // Fallback to WhatsApp
